@@ -38,8 +38,8 @@ module Clarifyio
       JSON.parse(connection.get(url, parameter).body)
     end
 
-    def post(url, parameters={})
-      JSON.parse(connection.post(url, payload).body)
+    def post(url, parameter={})
+      JSON.parse(connection.post(url, parameter).body)
     end
   end
 end
