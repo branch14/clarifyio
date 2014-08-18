@@ -18,12 +18,23 @@ Or install it yourself as:
 
     $ gem install clarifyio
 
+## Setup
+
+Store you bearer token in your home directory
+
+    echo 'token: <your-token-here>' > ~/.clarifyio
+    
 ## Usage
 
 ### Commandline
 
-    clarifyio index <audiofile>
+    # create a new bundle and include the given media file
+    clarifyio index <url-to-media-file>
+
+    # list all bundles and their tracks' status
     clarifyio tree
+
+    # search, for now the results a displayed in yaml
     clarifyio search <query>
 
 ## Contributing
