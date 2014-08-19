@@ -18,6 +18,21 @@ module Clarifyio
       puts bundle.to_yaml
     end
 
+    def bundle
+      id = args[1] || usage
+      puts Endpoint.instance.get("/v1/bundles/#{id}").to_yaml
+    end
+
+    def tracks
+      id = args[1] || usage
+      puts Endpoint.instance.get("/v1/bundles/#{id}/tracks").to_yaml
+    end
+
+    def metadata
+      id = args[1] || usage
+      puts Endpoint.instance.get("/v1/bundles/#{id}/metadata").to_yaml
+    end
+    
     def bundles
       puts Endpoint.instance.bundles.to_yaml
     end
@@ -43,6 +58,9 @@ module Clarifyio
       puts
       puts 'Usage: clarifyio index <url>'
       puts '                 bundles'
+      puts '                 bundle <bundle_id>'
+      puts '                 tracks <bundle_id>'
+      puts '                 metadata <bundle_id>'
       puts '                 tree'
       puts '                 search <query>'
       puts
